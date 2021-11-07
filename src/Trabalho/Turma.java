@@ -1,11 +1,6 @@
 package Trabalho;
 
-import java.util.Scanner;
-
-//import java.util.Arrays;
-
 public class Turma {
-	//criar array dinâmico
 	protected String nomeTurma;
 	protected Estudante[] estudantesVetor = new Estudante[10]; //tipo de dado e nome da variável
 	protected int numEstudantes;
@@ -32,26 +27,38 @@ public class Turma {
 	} //– mostra os dados de todos os estudantes da turma;
 	
 	Estudante pesquisar (int matricula) {
-		return e;		
-	} //– procura no array o estudante de matrícula igual ao parâmetro passado e o retorna;
-	
-	void trancar (int matricula) {
-		for(int i=0; i<estudantesVetor.length; i++) {
+		for(int i=0; i<numEstudantes; i++) {
 		    if(estudantesVetor[i].matricula == matricula) { 
-		        estudantesVetor[i] = null;
-		        System.out.println("Estudante "+estudantesVetor[i].nome+" excluído com sucesso!");
-		    }else {
-		    	System.out.println("Não existe estudante com esta matrícula!");
+		    	String e = estudantesVetor[i].nome;
+		    	System.out.println("Pesquisa estudante: "+e);
+		    	break;
+		    }
+		    if (estudantesVetor[i].matricula != matricula){
+		    	System.out.println("Não existe estudante com essa matrícula");
+		    	break;
 		    }
 		}
-	}// – exclui estudante da turma;
-	void trancar (Estudante e) {} //– exclui estudante da turma.
+		return e;	
+	} //– procura no array o estudante de matrícula igual ao parâmetro passado e o retorna;
 	
-	//getters and setters
-	//	String getNomeTurma() {
-	//		return nomeTurma;
-	//	}
-
-		
-
+	void trancar (int matricula) {// – exclui estudante da turma;
+		for(int i=0; i<numEstudantes; i++) {
+		    if(estudantesVetor[i].matricula == matricula) { 
+		        System.out.println("Estudante "+estudantesVetor[i].nome+" excluído com sucesso!");
+		        estudantesVetor[i]=null;
+		    }
+		    break;
+		}
+	}
+	
+	void trancar (Estudante e) {//Sobrecarga!
+		for(int i=0; i<numEstudantes;i++) {
+		    if(estudantesVetor[i] == e) { 
+		        System.out.println("Estudante "+estudantesVetor[i].nome+" excluído com sucesso!");
+		        estudantesVetor[i]=null;
+		    }
+		    break;
+		}
+	} 
+	
 }

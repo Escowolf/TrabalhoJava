@@ -14,10 +14,9 @@ public class TesteTurma {
 		turma1.matricular(e1);
 		turma1.matricular(e2);
 		turma1.listar();
+		turma1.pesquisar(666666);
+		turma1.trancar(e2);
 		
-		Turma turma2 = new Turma("Des. de Software");
-		turma2.matricular(e1);
-		turma2.listar();
 		
 	}
 

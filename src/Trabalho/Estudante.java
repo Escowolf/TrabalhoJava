@@ -5,7 +5,7 @@ public class Estudante {
 	int matricula;
 	char sexo;
 	
-	public void dadosEstudante(String nome,int matricula,char sexo) {//informações "setadas" pelo usuário;
+	public void dadosEstudante(String nome,int matricula,char sexo) {//informações "setadas" pelo usuário;	
 		this.nome = nome;
 		this.matricula = matricula;
 		this.sexo = sexo;
