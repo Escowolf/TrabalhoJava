@@ -17,14 +17,6 @@ public class Turma {
 			System.out.println(""); //linha em branco para dar espaço
 		}
 	
-	void listar(){
-		for (int i=0; i<numEstudantes;i++) {
-			System.out.println("Nome: "+estudantesVetor[i].nome+" Nº matrícula: "+estudantesVetor[i].matricula+" Sexo: "+estudantesVetor[i].sexo);
-			System.out.println("");
-		}
-		System.out.println(numEstudantes+" alunos matriculados em "+nomeTurma);
-		System.out.println("");
-	} //– mostra os dados de todos os estudantes da turma;
 	
 	Estudante pesquisar (int matricula) {
 		for(int i=0; i<numEstudantes; i++) {
@@ -44,12 +36,24 @@ public class Turma {
 	void trancar (int matricula) {// – exclui estudante da turma;
 		for(int i=0; i<numEstudantes; i++) {
 		    if(estudantesVetor[i].matricula == matricula) { 
-		        System.out.println("Estudante "+estudantesVetor[i].nome+" excluído com sucesso!");
-		        estudantesVetor[i]=null;
+		        System.out.println("Estudante "+estudantesVetor[i].nome+" foi excluído!");
+		    	for (int j = i; j<estudantesVetor.length-1;j++) {
+		    		estudantesVetor[j] = estudantesVetor[j+1];
+		    	}
+		    	numEstudantes--;
 		    }
+		    System.out.println(numEstudantes);
 		    break;
 		}
 	}
+	void listar(){
+		for (int i=0; i<numEstudantes;i++) {
+			System.out.println("Nome: "+estudantesVetor[i].nome+" Nº matrícula: "+estudantesVetor[i].matricula+" Sexo: "+estudantesVetor[i].sexo);
+			System.out.println("");
+		}
+		System.out.println(numEstudantes+" alunos matriculados em "+nomeTurma);
+		System.out.println("");
+	} //– mostra os dados de todos os estudantes da turma;
 	
 	void trancar (Estudante e) {//Sobrecarga!
 		for(int i=0; i<numEstudantes;i++) {
