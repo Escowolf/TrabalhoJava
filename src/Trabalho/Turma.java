@@ -30,7 +30,6 @@ public class Turma {
 	void trancar (int matricula) {// – exclui estudante da turma;
 		for(int i=0; i<numEstudantes; i++) {
 		    if(estudantesVetor[i].matricula == matricula) { 
-		    	System.out.println(matricula+" "+i);
 		        System.out.println("Estudante "+estudantesVetor[i].nome+" foi excluído!");
 		    	for (int j = i; j<estudantesVetor.length-1;j++) {
 		    		estudantesVetor[j] = estudantesVetor[j+1];
