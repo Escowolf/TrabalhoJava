@@ -8,7 +8,6 @@ public class TurmaNew {
 	protected int numEstudantes;
 	protected Estudante e;
 	protected ArrayList<Estudante> alunos = new ArrayList<Estudante>();
-	int i = 0;
 
 	public TurmaNew(String nomeTurma) {//Constructor
 		this.nomeTurma = nomeTurma;
@@ -26,34 +25,40 @@ public class TurmaNew {
 			 e = it.next();
 			System.out.println("Estudante: " + e.nome);
 			}
-	} //– mostra os dados de todos os estudantes da turma;
+	} 
 	
 	Estudante pesquisar (int matricula) {//– procura no array o estudante de matrícula igual ao parâmetro passado e o retorna;
-		while(it.hashCode()!=matricula) {
-			  i++;
-		}
-	  	e = alunos.get(i);
-	 	System.out.println("Pesquisa estudante: "+alunos.get(i).nome+" Matrícula: "+alunos.get(i).matricula);
+		ListIterator<Estudante> it = alunos.listIterator();
+		while (it.hasNext()) {
+			 e = it.next();
+			 if (e.matricula == matricula) {
+				 	System.out.println("Pesquisa estudante: "+e.nome+" Matrícula: "+e.matricula);
+			 }
+			}
 		return e;	
 	} 
 	
 	void trancar (int matricula) {// – exclui estudante da turma;
-
-		/*for (int i = 0; i < alunos.size(); i++) {
-		    if(alunos.get(i).matricula == matricula) { 
-		    	  //remove o i-ésimo contato da agenda
-		    	  alunos.remove(i);
-		    	  System.out.println("Aluno "+alunos.get(i).nome+" removido com sucesso!");
-		    	}
-		    }*/
+		ListIterator<Estudante> it = alunos.listIterator();
+		while (it.hasNext()) {
+			 e = it.next();
+			 if (e.matricula == matricula) {
+				 alunos.remove(e);
+				 System.out.println("Aluno "+e.nome+" removido com sucesso!");
+				 break;
+			 }
+		}
 	}
 	
 	void trancar (Estudante e) {//Sobrecarga!
-		while (it.hasNext()) {//uso de iterator
-			if (it == e) {
-				it.remove();
-			}
-			++i;
-			}
+		ListIterator<Estudante> it = alunos.listIterator();
+		while (it.hasNext()) {
+			Estudante aluno = it.next();
+			 if (aluno == e) {
+				 alunos.remove(e);
+				 System.out.println("Aluno "+e.nome+" removido com sucesso!");
+				 break;
+			 }
+		}
 	}
 }
