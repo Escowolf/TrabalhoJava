@@ -1,13 +1,15 @@
 package trabalho;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class TurmaNew {
 	protected String nomeTurma;
 	protected int numEstudantes;
 	protected Estudante e;
 	ArrayList<Estudante> alunos = new ArrayList<Estudante>();
-	
+	Iterator<Estudante> i = alunos.iterator();
+
 	public TurmaNew(String nomeTurma) {//Constructor
 		this.nomeTurma = nomeTurma;
 	}
@@ -20,9 +22,12 @@ public class TurmaNew {
 		}
 		
 	Estudante pesquisar (int matricula) {//– procura no array o estudante de matrícula igual ao parâmetro passado e o retorna;
-		for (int i=0; i<alunos.size(); i++) {
-			String e = "Posição %d- %s\n"+i+alunos.get(i);
-	    }
+		for (int i = 0; i < alunos.size(); i++) {
+		    if(alunos.get(i).matricula == matricula) { 
+		    	String e = alunos.get(i).nome;
+		    	System.out.println("Pesquisa estudante: "+e+" Matrícula: "+alunos.get(i).matricula);
+		    }
+		}
 		return e;	
 	} 
 	
