@@ -19,6 +19,12 @@ public class TurmaNew {
 			System.out.println(""); //linha em branco para dar espaço
 		}
 	
+	/*public void listar(ArrayList<Estudante> e){
+		for(int i = 0; i< e.size(); i++){
+			System.out.println(e.get(i).nome);
+		}
+	}*/
+	
 	void listar(){// - apresenta estudantes matriculados na turma
 		 ListIterator<Estudante> it = alunos.listIterator();
 		 while (it.hasNext()) {
