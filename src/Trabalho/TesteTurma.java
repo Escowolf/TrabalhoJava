@@ -14,8 +14,8 @@ public class TesteTurma {
 		turma1.matricular(estudante);
 		turma1.matricular(monitor);
 		turma1.matricular(estagiario);
-		//turma1.listar();
-		turma1.pesquisar(654321);
+		turma1.listar();
+		//turma1.pesquisar(123456);
 		//turma1.trancar(123456);
 		//turma1.trancar(monitor);		
 	}
