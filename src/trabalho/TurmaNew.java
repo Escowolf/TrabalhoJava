@@ -1,14 +1,13 @@
 package trabalho;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.ListIterator;
 
 public class TurmaNew {
 	protected String nomeTurma;
 	protected int numEstudantes;
 	protected Estudante e;
-	ArrayList<Estudante> alunos = new ArrayList<Estudante>();
-	Iterator<Estudante> it = alunos.iterator();
+	protected ArrayList<Estudante> alunos = new ArrayList<Estudante>();
 	int i = 0;
 
 	public TurmaNew(String nomeTurma) {//Constructor
@@ -22,9 +21,10 @@ public class TurmaNew {
 		}
 	
 	void listar(){// - apresenta estudantes matriculados na turma
-		while (it.hasNext()) {//uso de iterator
-			System.out.println("Estudante: " + alunos.get(i).nome);
-			i++;
+		 ListIterator<Estudante> it = alunos.listIterator();
+		 while (it.hasNext()) {
+			 e = it.next();
+			System.out.println("Estudante: " + e.nome);
 			}
 	} //– mostra os dados de todos os estudantes da turma;
 	
